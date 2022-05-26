@@ -5,10 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -20,4 +17,8 @@ public class Student {
     private Long id;
     private String nom;
     private String email;
+    @Column(length = 10)
+    private String genre;
+    private String telephone;
+
 }

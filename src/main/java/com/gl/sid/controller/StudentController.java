@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/student")
+@CrossOrigin(origins = "*")
 public class StudentController {
     private StudentRepository repos;
 
@@ -33,9 +34,10 @@ public class StudentController {
     }
 
 
+
     @DeleteMapping("/delete/{id}")
-    public String deleteStudent(@PathVariable("id") Long id){
+    public void deleteStudent(@PathVariable("id") Long id){
         this.repos.deleteById(id);
-        return "student deleted successfully !!!";
     }
 }
+
