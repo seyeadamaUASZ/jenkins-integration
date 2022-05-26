@@ -31,4 +31,11 @@ public class StudentController {
     public Optional<Student> getStudentById(@PathVariable("id") Long id){
         return this.repos.findById(id);
     }
+
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteStudent(@PathVariable("id") Long id){
+        this.repos.deleteById(id);
+        return "student deleted successfully !!!";
+    }
 }
